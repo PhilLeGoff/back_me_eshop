@@ -1,11 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
 require('dotenv').config();
+
 
 const app = express();
 
 // Middleware: JSON parsing and static files
+app.use(cors( {origin: 'http://localhost:5173' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));

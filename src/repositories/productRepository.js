@@ -1,8 +1,10 @@
 const Product = require('../models/Product');
 
-exports.findAll = async () => {
-  return await Product.find({});
+exports.findAll = async (page, limit) => {
+  const skip = (page - 1) * limit;
+  return await Product.find().skip(skip).limit(limit);
 };
+
 
 exports.create = async (data) => {
   const product = new Product(data);
@@ -16,4 +18,10 @@ exports.update = async (id, data) => {
 
 exports.delete = async (id) => {
   return await Product.findByIdAndDelete(id);
+};
+
+exports.searchProductByName = async (query) => {
+  return await Product.find({
+    name: { $regex: query, $options: 'i' }
+  });
 };

@@ -1,12 +1,13 @@
 const productRepository = require('../repositories/productRepository');
 
-exports.getProducts = async () => {
+exports.getProducts = async (page, limit) => {
   try {
-    return await productRepository.findAll();
+    return await productRepository.findAll(page, limit);
   } catch (error) {
     throw error;
   }
 };
+
 
 exports.createProduct = async (productData) => {
   try {
@@ -27,6 +28,14 @@ exports.updateProduct = async (id, productData) => {
 exports.deleteProduct = async (id) => {
   try {
     return await productRepository.delete(id);
+  } catch (error) {
+    throw error;
+  }
+};
+
+exports.searchProductByName = async (query) => {
+  try {
+    return await productRepository.searchProductByName(query);
   } catch (error) {
     throw error;
   }
