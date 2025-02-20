@@ -1,3 +1,5 @@
+
+
 const productService = require('../services/productService');
 
 exports.getProducts = async (req, res) => {
@@ -53,5 +55,18 @@ exports.deleteProduct = async (req, res) => {
   } catch (error) {
     console.error('Error deleting product:', error);
     return res.status(500).json({ error: 'Failed to delete product' });
+  }
+};
+
+
+//cree un produit
+const productService = require("../services/productService");
+
+exports.createProduct = async (req, res) => {
+  try {
+    const newProduct = await productService.createProduct(req.body);
+    res.status(201).json(newProduct);
+  } catch (error) {
+    res.status(500).json({ error: "Erreur lors de la création du produit" });
   }
 };

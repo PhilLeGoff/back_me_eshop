@@ -27,6 +27,7 @@ const productRoutes = require('./src/routes/productRoutes'); // Ensure this file
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);

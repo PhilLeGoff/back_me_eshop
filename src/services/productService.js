@@ -8,6 +8,13 @@ exports.getProducts = async () => {
   }
 };
 
+
+
+//formulaire
+exports.createProduct = async (productData) => {
+  return await productRepository.createProduct(productData);
+};
+
 exports.createProduct = async (productData) => {
   try {
     return await productRepository.create(productData);

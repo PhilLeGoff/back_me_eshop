@@ -17,3 +17,9 @@ exports.update = async (id, data) => {
 exports.delete = async (id) => {
   return await Product.findByIdAndDelete(id);
 };
+
+//formulaire
+exports.createProduct = async (productData) => {
+  const product = new Product(productData);
+  return await product.save();
+};
