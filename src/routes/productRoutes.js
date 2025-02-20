@@ -10,6 +10,8 @@ router.post('/', productController.createProduct);
 router.delete('/', productController.deleteProduct);
 router.put('/id', productController.updateProduct);
 
+
+
 //route formulaire creation produit
 router.post("/", productController.createProduct);
 
