@@ -5,6 +5,9 @@ exports.findAll = async (page, limit) => {
   return await Product.find().skip(skip).limit(limit);
 };
 
+exports.getProductById = async (id) => {
+  return await Product.findById(id);
+};
 
 exports.create = async (data) => {
   const product = new Product(data);
@@ -21,7 +24,8 @@ exports.delete = async (id) => {
 };
 
 exports.searchProductByName = async (query) => {
-  return await Product.find({
+  const products = await Product.find({
     name: { $regex: query, $options: 'i' }
   });
+  return products
 };

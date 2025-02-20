@@ -8,6 +8,13 @@ exports.getProducts = async (page, limit) => {
   }
 };
 
+exports.getProductById = async (id) => {
+  try {
+    return await productRepository.getProductById(id);
+  } catch (error) {
+    throw error;
+  }
+};
 
 exports.createProduct = async (productData) => {
   try {
