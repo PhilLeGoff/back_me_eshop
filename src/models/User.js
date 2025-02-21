@@ -11,15 +11,15 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  password: { // required for authentication
+  password: {
     type: String,
     required: true,
   },
-  isAdmin: { // flag for admin users
+  isAdmin: {
     type: Boolean,
     default: false,
   },
-  basket: [{ // array of references to Product documents
+  basket: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Product'
   }]

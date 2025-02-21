@@ -15,8 +15,7 @@ exports.create = async (data) => {
 };
 
 exports.update = async (id, data) => {
-  // runValidators option will ensure the update obeys your schema validation rules
-  return await Product.findByIdAndUpdate(id, data, { new: true, runValidators: true });
+  return await Product.findByIdAndUpdate(id, data, { new: true });
 };
 
 exports.delete = async (id) => {

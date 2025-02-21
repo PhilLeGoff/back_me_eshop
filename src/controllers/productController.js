@@ -42,14 +42,13 @@ exports.createProduct = async (req, res) => {
 };
 
 exports.updateProduct = async (req, res) => {
-  // Preferably, the route should be defined as '/:id'
   const id = req.params.id || req.body.id || req.query.id;
   if (!id) {
     return res.status(400).json({ error: 'Product id is required for update' });
   }
   try {
     if (req.file) {
-      req.body.imageUrl = req.file.path; // or a URL if you're serving static files
+      req.body.imageUrl = req.file.path;
     }
     const updatedProduct = await productService.updateProduct(id, req.body);
     if (!updatedProduct) {
@@ -63,7 +62,6 @@ exports.updateProduct = async (req, res) => {
 };
 
 exports.deleteProduct = async (req, res) => {
-  // Preferably, the route should be defined as '/:id'
   const id = req.params.id || req.body.id || req.query.id;
   if (!id) {
     return res.status(400).json({ error: 'Product id is required for deletion' });

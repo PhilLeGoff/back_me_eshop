@@ -21,7 +21,7 @@ exports.registerUser = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      isAdmin: isAdmin || false, // default to false if not provided
+      isAdmin: isAdmin || false,
       basket: []
     });
     await user.save();

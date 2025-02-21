@@ -30,6 +30,5 @@ exports.removeFromBasket = async (userId, productId) => {
 };
 
 exports.getBasketProducts = async (userId) => {
-  // Assumes that the 'basket' field is an array of ObjectIds referencing the Product model.
   return await User.findById(userId).populate('basket');
 };

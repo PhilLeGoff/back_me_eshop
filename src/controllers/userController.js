@@ -20,7 +20,6 @@ exports.createUser = async (req, res) => {
 
 exports.addToBasket = async (req, res) => {
   try {
-    // Expecting { userId, productId } in req.body
     const { userId, productId } = req.body;
     const updatedUser = await userService.addProductToBasket(userId, productId);
     res.status(200).json(updatedUser);
@@ -31,7 +30,6 @@ exports.addToBasket = async (req, res) => {
 
 exports.removeFromBasket = async (req, res) => {
   try {
-    // Expecting { userId } in req.body and productId in req.params
     const { userId } = req.body;
     const productId = req.params.productId;
     const updatedUser = await userService.removeProductFromBasket(userId, productId);
