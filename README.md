@@ -23,38 +23,39 @@ This is the backend repository for IPSSI'SHOP, a full-stack e-commerce applicati
 
 ## Project Structure
 
-.
-├── app.js
-├── bin
-│   └── www
-├── package.json
-├── productService.js
-├── public
-│   ├── images
-│   ├── javascripts
-│   └── stylesheets
-│       └── style.css
-├── README.md
-├── src
-│   ├── controllers
-│   │   ├── authController.js
-│   │   ├── productController.js
-│   │   └── userController.js
-│   ├── middleware
-│   │   └── upload.js
-│   ├── models
-│   │   ├── Product.js
-│   │   └── User.js
-│   ├── repositories
-│   │   ├── productRepository.js
-│   │   └── userRepository.js
-│   ├── routes
-│   │   ├── authRoutes.js
-│   │   ├── productRoutes.js
-│   │   └── userRoutes.js
-│   └── services
-│       ├── productService.js
-│       └── userService.js
+    ```bash
+    .
+    ├── app.js
+    ├── bin
+    │   └── www
+    ├── package.json
+    ├── productService.js
+    ├── public
+    │   ├── images
+    │   ├── javascripts
+    │   └── stylesheets
+    │       └── style.css
+    ├── README.md
+    ├── src
+    │   ├── controllers
+    │   │   ├── authController.js
+    │   │   ├── productController.js
+    │   │   └── userController.js
+    │   ├── middleware
+    │   │   └── upload.js
+    │   ├── models
+    │   │   ├── Product.js
+    │   │   └── User.js
+    │   ├── repositories
+    │   │   ├── productRepository.js
+    │   │   └── userRepository.js
+    │   ├── routes
+    │   │   ├── authRoutes.js
+    │   │   ├── productRoutes.js
+    │   │   └── userRoutes.js
+    │   └── services
+    │       ├── productService.js
+    │       └── userService.js
 
 
 ## Prerequisites
