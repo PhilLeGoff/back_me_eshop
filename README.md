@@ -88,19 +88,16 @@ Install Dependencies:
 
 If using npm (v7+):
 
-    ```bash
     npm install --legacy-peer-deps
 
 Or if using Yarn:
 
-    ```bash
     yarn install
 
 4. **Running the Application**
 
 Start the backend server with:
 
-    ```bash
     npm run start
 
 (Or use your preferred script, e.g., node src/app.js.)
