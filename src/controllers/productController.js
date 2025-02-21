@@ -28,11 +28,16 @@ exports.getProductById = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   try {
+    // req.file contains the uploaded file info.
+    // Attach the image path to the request body so the service can store it.
+    if (req.file) {
+      req.body.imageUrl = req.file.path; // or a URL if you're serving static files
+    }
     const newProduct = await productService.createProduct(req.body);
     return res.status(201).json(newProduct);
   } catch (error) {
-    console.error('Error creating product:', error);
-    return res.status(500).json({ error: 'Failed to create product' });
+    console.error("Error creating product:", error);
+    return res.status(500).json({ error: "Failed to create product" });
   }
 };
 
@@ -43,6 +48,9 @@ exports.updateProduct = async (req, res) => {
     return res.status(400).json({ error: 'Product id is required for update' });
   }
   try {
+    if (req.file) {
+      req.body.imageUrl = req.file.path; // or a URL if you're serving static files
+    }
     const updatedProduct = await productService.updateProduct(id, req.body);
     if (!updatedProduct) {
       return res.status(404).json({ error: 'Product not found' });
