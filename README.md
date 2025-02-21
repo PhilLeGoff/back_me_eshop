@@ -23,7 +23,7 @@ This is the backend repository for IPSSI'SHOP, a full-stack e-commerce applicati
 
 ## Project Structure
 
-    ```bash
+  
     .
     ├── app.js
     ├── bin
